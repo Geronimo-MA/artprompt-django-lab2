@@ -1,0 +1,26 @@
+{% extends "artprompt/base.html" %}
+{% load static %}
+{% load artprompt_tags %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ title }}</h2>
+    <p>{{ description }}</p>
+
+    <p><strong>{% site_message %}</strong></p>
+
+    <img src="{% static 'artprompt/images/palette.png' %}" alt="Палитра художника" width="300">
+
+    <h3>Разделы сайта</h3>
+    <ul>
+        <li><a href="/categories/">Категории</a></li>
+        <li><a href="/ideas/1/">Идея по id</a></li>
+        <li><a href="/ideas/landscape/">Идея по slug</a></li>
+        <li><a href="/archive/2023/">Архив 2023</a></li>
+        <li><a href="/archive/2025/">Архив 2025 (404)</a></li>
+        <li><a href="/search/?style=watercolor&type=idea">Поиск (GET)</a></li>
+        <li><a href="/generate/">Сгенерировать идею (POST)</a></li>
+        <li><a href="/go-home/">Redirect</a></li>
+    </ul>
+{% endblock %}

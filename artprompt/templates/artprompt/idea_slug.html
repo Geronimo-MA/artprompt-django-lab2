@@ -1,0 +1,17 @@
+{% extends "artprompt/base.html" %}
+
+{% block title %}Идея{% endblock %}
+
+{% block content %}
+    <h2>Идея</h2>
+    <p><strong>slug:</strong> {{ idea_slug }}</p>
+
+    {% if get_params %}
+        <h3>GET-параметры</h3>
+        <ul>
+            {% for key, value in get_params.items %}
+                <li><strong>{{ key }}</strong>: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "artprompt/base.html" %}
+{% load artprompt_tags %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ title }}</h2>
+
+    <p><strong>Заголовок в верхнем регистре:</strong> {{ title|shout }}</p>
+
+    <ol>
+        {% for category in categories %}
+            <li>{{ category }}</li>
+        {% empty %}
+            <li>Категории пока отсутствуют</li>
+        {% endfor %}
+    </ol>
+
+    {% if categories|length > 5 %}
+        <p><strong>Категорий достаточно много.</strong></p>
+    {% else %}
+        <p><strong>Категорий пока немного.</strong></p>
+    {% endif %}
+
+    <p><strong>Всего категорий:</strong> {{ categories|length }}</p>
+    <p><strong>Первая категория:</strong> {{ categories|first }}</p>
+    <p><strong>Последняя категория:</strong> {{ categories|last }}</p>
+    <p><strong>Все категории в одну строку:</strong> {{ categories|join:", " }}</p>
+{% endblock %}

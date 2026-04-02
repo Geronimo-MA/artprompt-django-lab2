@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ArtPrompt{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'artprompt/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>ArtPrompt</h1>
+        {% include "artprompt/includes/nav.html" %}
+        <hr>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <hr>
+    <footer>
+        <p>Учебный проект Django</p>
+    </footer>
+</body>
+</html>
